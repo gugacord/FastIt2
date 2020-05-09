@@ -1,0 +1,28 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+[gui]
+	wmstate = normal
+	geometry = 1109x563+96+96 216 255
+[remote "origin"]
+	url = https://github.com/gugacord/FastIt.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[remote "github"]
+	url = https://github.com/gugacord/FastIt.git
+	fetch = +refs/heads/*:refs/remotes/github/*
+[remote "git"]
+	url = https://github.com/gugacord/FastIt.git
+	fetch = +refs/heads/*:refs/remotes/git/*
+[remote "gitt"]
+	url = https://github.com/gugacord/FastIt.git
+	fetch = +refs/heads/*:refs/remotes/gitt/*
+[branch "master"]
+	remote = github2
+	merge = refs/heads/master
+[remote "github2"]
+	url = https://github.com/gugacord/FastIt2.git
+	fetch = +refs/heads/*:refs/remotes/github2/*
