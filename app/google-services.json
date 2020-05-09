@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "945173479469",
+    "firebase_url": "https://fastit-cc7ad.firebaseio.com",
+    "project_id": "fastit-cc7ad",
+    "storage_bucket": "fastit-cc7ad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:945173479469:android:74f4042e093b17025ef8a4",
+        "android_client_info": {
+          "package_name": "com.delivery.fastit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "945173479469-3e7nq8o9uu3giovqbb60ocsbj48egtpj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.delivery.fastit",
+            "certificate_hash": "79e8b45e83d394306b833b39ba5ad682fa45932f"
+          }
+        },
+        {
+          "client_id": "945173479469-noernk1ikt1kocg4co4mem1e5avjs1c7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUBT7O4p5ND2QAn-MKEmR_9NO7ELeJS4Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "945173479469-noernk1ikt1kocg4co4mem1e5avjs1c7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
