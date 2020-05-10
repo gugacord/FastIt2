@@ -1,9 +1,11 @@
 package com.delivery.fastit;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +17,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.rengwuxian.materialedittext.MaterialEditText;
+
+import java.util.Objects;
 
 public class SignUp extends AppCompatActivity {
 
@@ -46,20 +50,21 @@ public class SignUp extends AppCompatActivity {
                 mDialog.show();
 
                 table_user.addValueEventListener(new ValueEventListener() {
+                    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         //Check if phone is already in use
-                        if(dataSnapshot.child(edtPhone.getText().toString()).exists())
+                        if(dataSnapshot.child(Objects.requireNonNull(edtPhone.getText()).toString()).exists())
                         {
                             mDialog.dismiss();
                             Toast.makeText(SignUp.this, "Telefone já cadastrado", Toast.LENGTH_SHORT).show();
                         }else{
                             mDialog.dismiss();
                             String strPhone = edtPhone.getText().toString();
-                            String strName = edtName.getText().toString();
-                            String strEmail = edtEmail.getText().toString();
-                            String strPassword = edtPassword.getText().toString();
-                            String strCPF = edtCPF.getText().toString();
+                            String strName = Objects.requireNonNull(edtName.getText()).toString();
+                            String strEmail = Objects.requireNonNull(edtEmail.getText()).toString();
+                            String strPassword = Objects.requireNonNull(edtPassword.getText()).toString();
+                            String strCPF = Objects.requireNonNull(edtCPF.getText()).toString();
 
                             User user = new User(strPhone, strName, strPassword, strEmail, strCPF);
                             table_user.child(edtPhone.getText().toString()).setValue(user);

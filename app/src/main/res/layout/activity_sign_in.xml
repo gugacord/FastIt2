@@ -1,81 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@color/cinza"
     tools:context=".SignIn">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_centerInParent="true"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp">
 
-        <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/edtPhone"
-            android:hint="Número de Telefone (Com DDD)"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fitsSystemWindows="false"
+            android:windowSoftInputMode="stateVisible|adjustResize"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <info.hoang8f.widget.FButton
+                android:id="@+id/btnSignIn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/btnSignActive"
+                android:text="Entrar"
+                android:textColor="@android:color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"
-            android:inputType="phone"
-            app:met_baseColor="@android:color/white"
-            app:met_floatingLabel="highlight"
-            app:met_maxCharacters="13"
-            app:met_primaryColor="@android:color/white"
-            app:met_singleLineEllipsis="true"
-            app:met_textColorHint="@android:color/white"
-            />
-
-
-        <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/edtPassword"
-            android:hint="Senha"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColorHint="@android:color/white"
-            android:textSize="20sp"
-            android:inputType="textPassword"
-            app:met_baseColor="@android:color/white"
-            app:met_floatingLabel="highlight"
-            app:met_maxCharacters="11"
-            app:met_primaryColor="@android:color/white"
-            app:met_singleLineEllipsis="true"
-            app:met_textColorHint="@android:color/white"
-            />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="25dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+            android:text="Comece a usar o FastIt"
+            android:textSize="24sp"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
         <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
             android:src="@drawable/logo"
-            android:layout_width="200dp"
-            android:layout_height="200dp"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    </LinearLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/design_default_color_background"
+            android:padding="20dp"
+            android:backgroundTint="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" >
 
-    <info.hoang8f.widget.FButton
-        android:id="@+id/btnSignIn"
-        android:text="Entrar"
-        android:textColor="@android:color/white"
-        android:layout_marginRight="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_alignParentBottom="true"
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="25dp"
-        android:backgroundTint="@color/btnSignActive"
-        />
+            <EditText
+                android:id="@+id/editText5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/cinza"
+                android:ems="10"
+                android:hint="Senha"
+                android:inputType="textPassword"
+                android:padding="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editText3" />
 
-</RelativeLayout>
+            <EditText
+                android:id="@+id/editText3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/cinza"
+                android:ems="13"
+                android:hint="Número do telefone"
+                android:inputType="phone"
+                android:padding="15dp"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/cinza"
+                android:hint="Número de Telefone (Com DDD)"
+                android:padding="5dp"
+                android:textColorHint="@color/btnSignUp"
+                android:visibility="gone"
+                app:hintTextColor="@color/btnSignUp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:startIconContentDescription="Profile"
+                app:startIconTintMode="screen">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:inputType="phone"
+                    android:padding="10dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    app:met_baseColor="@android:color/white"
+                    app:met_floatingLabel="highlight"
+                    app:met_maxCharacters="13"
+                    app:met_primaryColor="@android:color/white"
+                    app:met_singleLineEllipsis="true"
+                    app:met_textColorHint="@android:color/white" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="Senha"
+                android:textColorHint="@color/btnSignUp"
+                android:visibility="gone"
+                app:hintTextColor="@color/btnSignUp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+                app:startIconContentDescription="Profile"
+                app:startIconTintMode="screen">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:padding="10dp"
+                    android:textColorHint="@android:color/white"
+                    android:textSize="14sp"
+                    app:met_baseColor="@android:color/white"
+                    app:met_floatingLabel="highlight"
+                    app:met_maxCharacters="13"
+                    app:met_primaryColor="@android:color/white"
+                    app:met_singleLineEllipsis="true"
+                    app:met_textColorHint="@android:color/white" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
