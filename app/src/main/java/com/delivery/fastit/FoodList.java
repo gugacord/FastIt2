@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -46,7 +48,8 @@ public class FoodList extends AppCompatActivity {
         //Get Intent Here
         if (getIntent() !=null)
             categoryId = getIntent().getStringExtra("CategoryId");
-        if (!categoryId.isEmpty() && categoryId != null)
+        assert categoryId != null;
+        if (!categoryId.isEmpty())
         {
             loadListFood(categoryId);
         }
@@ -68,7 +71,10 @@ public class FoodList extends AppCompatActivity {
                 viewHolder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void OnClick(View view, int position, boolean isLongClick) {
-                        Toast.makeText(FoodList.this,""+local.getName(),Toast.LENGTH_SHORT).show();
+                        //start new activity
+                        Intent itemDetail = new Intent(FoodList.this,ItemDetail.class);
+                        itemDetail.putExtra("itemID",adapter.getRef(position).getKey()); // send item id to new activity
+                        startActivity(itemDetail);
                     }
 
                     @Override
