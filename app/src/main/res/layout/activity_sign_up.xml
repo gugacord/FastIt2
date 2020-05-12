@@ -16,7 +16,7 @@
         android:layout_height="wrap_content">
 
         <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/edtPhone"
+            android:id="@+id/edtPhone2"
             android:hint="Número de Telefone (Com DDD)"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -81,7 +81,7 @@
             />
 
         <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/edtPassword"
+            android:id="@+id/edtPassword2"
             android:hint="Criar senha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
