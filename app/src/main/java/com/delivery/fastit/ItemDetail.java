@@ -95,14 +95,18 @@ public class ItemDetail extends AppCompatActivity {
     }
 
     private static int getDescription() {
+        return 0;
     }
 
     private static int getName() {
+        return 0;
     }
 
     private int getPrice() {
+        return 0;
     }
 
     private static int getImage() {
+        return 0;
     }
 }

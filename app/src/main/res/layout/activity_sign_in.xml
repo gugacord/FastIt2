@@ -12,13 +12,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp"
+        android:background="@drawable/bg_singin"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_margin="16dp"
             android:fitsSystemWindows="false"
             android:windowSoftInputMode="stateVisible|adjustResize"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -41,18 +42,20 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Comece a usar o FastIt"
-            android:textSize="24sp"
+            android:layout_marginTop="20dp"
+            android:text="Bem vindo de volta!"
             android:textColor="@android:color/black"
+            android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+            app:layout_constraintTop_toBottomOf="@+id/imgLogoSingin" />
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/imgLogoSingin"
             android:layout_width="150dp"
             android:layout_height="200dp"
+            android:layout_margin="16dp"
             android:src="@drawable/logo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -64,28 +67,14 @@
             android:layout_height="0dp"
             android:layout_marginTop="20dp"
             android:background="@color/design_default_color_background"
-            android:padding="20dp"
             android:backgroundTint="@android:color/white"
+            android:padding="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" >
+            app:layout_constraintTop_toBottomOf="@+id/textView4">
 
             <EditText
-                android:id="@+id/editText5"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@color/cinza"
-                android:ems="10"
-                android:hint="Senha"
-                android:inputType="textPassword"
-                android:padding="15dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText3" />
-
-            <EditText
-                android:id="@+id/editText3"
+                android:id="@+id/edtPhone"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:background="@color/cinza"
@@ -97,6 +86,20 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+
+            <EditText
+                android:id="@+id/edtPassword"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/cinza"
+                android:ems="10"
+                android:hint="Senha"
+                android:inputType="textPassword"
+                android:padding="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtPhone" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayout"
@@ -115,7 +118,7 @@
                 app:startIconTintMode="screen">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edtPhone"
+                    android:id="@+id/edtPhone2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@null"
@@ -148,7 +151,7 @@
                 app:startIconTintMode="screen">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edtPassword"
+                    android:id="@+id/edtPassword2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
@@ -162,6 +165,15 @@
                     app:met_singleLineEllipsis="true"
                     app:met_textColorHint="@android:color/white" />
             </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Esqueci a senha!"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtPassword" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

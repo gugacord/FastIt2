@@ -2,6 +2,7 @@ package com.delivery.fastit;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
@@ -9,9 +10,11 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.delivery.fastit.Common.Common;
@@ -24,22 +27,45 @@ import com.rengwuxian.materialedittext.MaterialEditText;
 
 import com.delivery.fastit.User;
 
+import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEvent;
+import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEventListener;
+
 import java.util.Objects;
 
 public class SignIn extends AppCompatActivity {
-    EditText edtPhone, edtPassword;
-    Button btnSignIn;
+    private EditText edtPhone, edtPassword;
+    private Button btnSignIn;
+    private ImageView logoImg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
+        //ActionBar toolBar = getSupportActionBar();
+        //toolBar.setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //edtPassword = (MaterialEditText) findViewById(R.id.edtPassword);
         edtPassword = findViewById(R.id.edtPassword);
         //edtPhone = (MaterialEditText) findViewById(R.id.edtPhone);
         edtPhone = findViewById(R.id.edtPhone);
         btnSignIn = (Button) findViewById(R.id.btnSignIn);
+
+        logoImg = findViewById(R.id.imgLogoSingin);
+
+        KeyboardVisibilityEvent.setEventListener(
+                this,
+                new KeyboardVisibilityEventListener() {
+                    @Override
+                    public void onVisibilityChanged(boolean isOpen) {
+                        if(isOpen) {
+                            logoImg.setVisibility(View.GONE);
+                        } else {
+                            logoImg.setVisibility(View.VISIBLE);
+                        }
+                    }
+                }
+        );
 
         //Init Firebase
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -95,4 +121,20 @@ public class SignIn extends AppCompatActivity {
                 });
             }
         });
-    }}
+
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        //16908332
+        //Toast.makeText(this, R.id.home + " Clickou "+id , Toast.LENGTH_SHORT).show();
+        if(id == 16908332) {
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
+}
