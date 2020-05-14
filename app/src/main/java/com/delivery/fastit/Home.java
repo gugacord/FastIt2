@@ -102,19 +102,19 @@ public class Home extends AppCompatActivity
                 //Picasso.with(getBaseContext()).load(model.getImage())
                 Picasso.get().load(model.getImage())
                         .into(viewHolder.imageView);
+
                 viewHolder.setItemClickListener(new ItemClickListener() {
+
                     @Override
                     public void OnClick(View view, int position, boolean isLongClick) {
-                        //get CategoryId and send to new Activity
-                        Intent foodList = new Intent(Home.this,FoodList.class);
-                        //Because CategoryId is Key, so we just get key of this item
-                        foodList.putExtra("CategoryId",adapter.getRef(position).getKey());
-                        startActivity(foodList);
                     }
 
                     @Override
                     public void onClick(View view, int adapterPosition, boolean b) {
-
+                        Intent foodList = new Intent(Home.this,FoodList.class);
+                        //Because CategoryId is Key, so we just get key of this item
+                        foodList.putExtra("CategoryId",adapter.getRef(adapterPosition).getKey());
+                        startActivity(foodList);
                     }
                 });
             }
