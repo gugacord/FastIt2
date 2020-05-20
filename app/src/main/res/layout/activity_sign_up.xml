@@ -101,8 +101,7 @@
     <info.hoang8f.widget.FButton
         android:id="@+id/btnSignUp"
         android:text="Cadastrar"
-        android:textColor="@android:color/black"
-        android:textStyle="bold"
+        android:textColor="@android:color/white"
         android:layout_marginRight="8dp"
         android:layout_marginLeft="8dp"
         android:layout_alignParentBottom="true"

@@ -32,8 +32,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/btnSignActive"
                 android:text="Entrar"
-                android:textColor="@android:color/black"
-                android:textStyle="bold"
+                android:textColor="@android:color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
