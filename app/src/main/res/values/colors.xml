@@ -5,6 +5,6 @@
     <color name="colorAccent">#FF8C00</color>
     <color name="cinza">#F8F7F7</color>
 
-    <color name="btnSignUp">#FF8C00</color>
-    <color name="btnSignActive">#FF8C00</color>
+    <color name="btnSignUp">#FFFF00</color>
+    <color name="btnSignActive">#FFFF00</color>
 </resources>
